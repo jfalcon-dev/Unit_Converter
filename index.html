@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Unit Converter</title>
+        <link href="index.css" rel="stylesheet">
+        <script src="index.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+    </head>
+    <body onload="lengthCnv(), volCnv(), massConv()">
+        <div class="mainUnitDisplay">
+            
+            <section>
+                <h1>Metric/Imperial unit conversion</h1>
+                <p class="unit" contenteditable="true" id="input-unit" oninput="userInput()">
+                    <span id="unit-display"></span></p>
+                
+            </section>
+        </div>
+        
+        <div class="mainCnvDisplay">
+            <section>
+                <h2 class="convHead">Length (Meter/Feet)</h2>
+                <p class="conversion"><span id="unit-display-meters"></span> meters = 
+                    <span id="meter-to-feet"></span> feet | <span id="unit-display-feet"></span>
+                    feet = <span id="feet-to-meter"></span> meters </p>
+            </section>
+            
+            <section>
+                <h2 class="convHead">Volume (Liters/Gallons)</h2>
+                <p class="conversion"><span id="unit-display-liters"></span> liters = <span id="liters-to-gallons"></span> gallons | 
+                    <span id="unit-display-gallons"></span> gallons = <span id="gallons-to-liters"></span> liters</p>
+            </section>
+            
+            <section>
+                <h2 class="convHead">Mass (Kilograms/Pounds)</h2>
+                <p class="conversion"><span id="unit-display-kilo"></span> kilos = <span id="kilo-to-lbs"></span> pounds | 
+                    <span id="unit-display-lbs"></span> pounds = <span id="lbs-to-kilo"></span> kilos</p>
+            </section>
+            
+        </div>
+    
+        
+    </body>
+</html>
