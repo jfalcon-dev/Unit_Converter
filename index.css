@@ -11,6 +11,18 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #1F2937;
+    
+}
+
+.user-input{
+    
+    width: 300px;
+    height: 90px;
+    font-size: 90px;
+    background-color: rgba(0,0,0, 0.1);
+    color: #ffffff;
+    text-align: center;
+    border: transparent;
 }
 
 .mainUnitDisplay {

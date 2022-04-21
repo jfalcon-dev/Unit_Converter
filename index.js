@@ -9,11 +9,13 @@ unitDisplay.textContent = unit;
 
 let litersToGal = unit * 0.264172;
 
+
+
 function userInput(){
     
-    unit = document.getElementById("input-unit").textContent;
+    unit = document.getElementById("userInput").value;
     
-    unitDisplay.textContent = unit;
+//    unitDisplay.textContent = unit;
     
     lengthCnv();
     volCnv();
