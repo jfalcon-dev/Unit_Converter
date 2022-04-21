@@ -15,11 +15,16 @@ function userInput(){
     
     unit = document.getElementById("userInput").value;
     
-//    unitDisplay.textContent = unit;
+
+    if (!(unit <=0 || unit >=0)){
+        alert("Please enter a number");
+    }
+    
     
     lengthCnv();
     volCnv();
     massConv();
+    
     
 }
 
