@@ -1,86 +1,56 @@
 
+let unit = 0;
 
-let unit = 20;
-
-let unitDisplay = document.getElementById("unit-display");
+let unitDisplay = document.querySelectorAll("span.unit-display");
 
 
-unitDisplay.textContent = unit;
-
-let litersToGal = unit * 0.264172;
-
-function userInput(){
+function display(){
     
-    unit = document.getElementById("input-unit").textContent;
     
-    unitDisplay.textContent = unit;
-    
-    lengthCnv();
-    volCnv();
-    massConv();
-    
+    for(let i = 0; i < unitDisplay.length ; i++){
+        
+        unitDisplay[i].textContent = unit;
+    }
 }
 
-function lengthCnv(){
+function getUnit(){
+    unit = document.getElementById("user-input").value;
+    display();
+    lengthConversion();
+    volumeConversion();
+    massConversion();
+}
+
+function lengthConversion(){
+    let meterToFeetDisplay = document.getElementById("meter-to-feet");
+    let feetToMeterDisplay = document.getElementById("feet-to-meter");
     
-    let feetToMeter = unit * 0.3048;
     let meterToFeet = unit * 3.28084;
+    let feetToMeter = unit * .3048;
     
-    let num1 = feetToMeter.toFixed(3);
-    let num2 = meterToFeet.toFixed(3);
+    meterToFeetDisplay.textContent = meterToFeet.toFixed(3);
+    feetToMeterDisplay.textContent = feetToMeter.toFixed(3);
     
-    let unitDisplayMeters = document.getElementById("unit-display-meters");
-    let unitDisplayFeet = document.getElementById("unit-display-feet");
-    unitDisplayMeters.textContent = unit;
-    unitDisplayFeet.textContent = unit;
-
-    
-    let metToImp = document.getElementById("meter-to-feet");
-    let impToMet = document.getElementById("feet-to-meter");
-    
-    
-    metToImp.textContent = num2;
-    impToMet.textContent = num1;
 }
 
-function volCnv(){
+function volumeConversion(){
+    let literToGallonDisplay = document.getElementById("liter-to-gallon");
+    let gallonToLiterDisplay = document.getElementById("gallon-to-liter");
     
-    let litersToGal = unit * 0.264172;
-    let galToLiters = unit * 3.785412;
+    let literToGallon = unit / 3.78541 ;
+    let gallonToLiter = unit * 3.78541 ;
     
-    let num1 = litersToGal.toFixed(3);
-    let num2 = galToLiters.toFixed(3);
-    
-    let unitDisplayLiters = document.getElementById("unit-display-liters");
-    let unitDisplayGallons = document.getElementById("unit-display-gallons");
-    unitDisplayLiters.textContent = unit;
-    unitDisplayGallons.textContent = unit;
-    
-    let metToImp = document.getElementById("liters-to-gallons");
-    let impToMet = document.getElementById("gallons-to-liters");
-    
-    metToImp.textContent = num1;
-    impToMet.textContent = num2;
+    literToGallonDisplay.textContent = literToGallon.toFixed(3);
+    gallonToLiterDisplay.textContent = gallonToLiter.toFixed(3);
 }
 
-function massConv(){
+function massConversion() {
+    let kilogramsToPoundsDisplay = document.getElementById("kilograms-to-pounds");
+    let poundsToKilogramsDisplay = document.getElementById("pounds-to-kilograms");
     
-    let kgsToLbs = unit * 2.204623;
-    let lbsToKgs = unit * 0.453592;
+    let kilogramsToPounds = unit * 2.205;
+    let poundsToKilograms = unit / 2.205;
     
-    let num1 = kgsToLbs.toFixed(3);
-    let num2 = lbsToKgs.toFixed(3);
-    
-    let unitDisplayKilo = document.getElementById("unit-display-kilo");
-    let unitDisplayLbs = document.getElementById("unit-display-lbs");
-    
-    unitDisplayKilo.textContent = unit;
-    unitDisplayLbs.textContent = unit;
-    
-    let metToImp = document.getElementById("kilo-to-lbs");
-    let impToMet = document.getElementById("lbs-to-kilo");
-    
-    metToImp.textContent = num1;
-    impToMet.textContent = num2;
+    kilogramsToPoundsDisplay.textContent = kilogramsToPounds.toFixed(3);
+    poundsToKilogramsDisplay.textContent = poundsToKilograms.toFixed(3);
 }
-
